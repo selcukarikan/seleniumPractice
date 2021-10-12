@@ -31,12 +31,23 @@ public class mediaMarkt {
     //8) gittigidiyor.com adresine gidin
         driver.get("https://www.gittigidiyor.com");
 //9) web sayfasinin sayfa basligini(title) alin ve ekrana yazdirin
+        System.out.println(driver.getTitle());
 //10) web sayfasinin url'ini alin ve ekrana yazdirin
+        System.out.println(driver.getCurrentUrl());
 //11) Title'in Gittigidiyor icerdigini kontrol edin.
-//12) sahibinden.com sayfasina geri don.
+        if (driver.getTitle().contains("Gittigidiyor")){
+            System.out.println("Gittigidiyor kelimesini iceriyor title  :" +" Test Pass");
+        } else{
+            System.out.println("Gittigidiyor keilmesini icermiyor title : "+ "Test Failed");
+        }
+//12) Medimarkt.com sayfasina geri don.
+        driver.navigate().back();
 //13) sayfayi yenile
+        driver.navigate().refresh();
 //14) onceki sayfaya don
-driver.close();
+        driver.navigate().forward();
+
+        driver.close();
 
     }
 }
